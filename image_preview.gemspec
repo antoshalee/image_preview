@@ -12,10 +12,11 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = "https://github.com/antoshalee/image_preview"
 
-  gem.files         = `git ls-files`.split($/)
+  gem.files         = Dir["{lib,vendor}/**/*"] + ["LICENSE.txt", "README.md"]
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.add_dependency "railties", "~> 3.1"
   gem.add_development_dependency "rspec", "~> 2.6"
 end
